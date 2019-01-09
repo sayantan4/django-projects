@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block body_block %}
+<style >
+  body{
+    background-color:black;
+  }
+.bar{
+  background-color: gold;
+}
+</style>
+<div class="jumbotron">
+  <h2> <em style="color:blue;">List of the schools:</em> </h2>
+  {% for school in schools %}
+
+  <ul>
+    <li> <h4 style="color:red;"> <a href="{{ school.id }}/">{{ school.name }}</a> </h4>  </li>
+  </ul>
+
+  {% endfor %}
+</div>
+
+{% endblock %}

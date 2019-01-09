@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block body_block %}
+<style >
+  body{
+    background-color:black;
+  }
+.bar{
+  background-color: gold;
+}
+</style>
+<h2 style="color:red;">REGISTER BELOW::</h2>
+<form style="color:red;" method="post">
+  <div class="form-group">
+    {% csrf_token %}
+    <p>Details of the school</p>
+    {{ schoolform.as_p }}
+    <input class='btn btn-primary' type="submit" name="" value="REGISTER">
+  </div>
+</form>
+{% endblock body_block%}

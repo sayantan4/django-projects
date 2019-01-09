@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block body_block %}
+<style >
+  body{
+    background-color:black;
+  }
+.bar{
+  background-color: gold;
+}
+</style>
+<div class="jumbotron">
+  <h1>Details of the School:: </h1>
+    <ul>
+      <li><h4>Name of the School is {{ schools.name }}</h4></li>
+      <li><h4>Name of the Principal is {{ schools.principal }}</h4></li>
+      <li><h4>Location of the School is {{ schools.location }}</h4></li>
+    </ul>
+
+<h1> Details of the Students :: </h1>
+
+{% for student in schools.students.all %}
+  <h4>{{student.name}} who is {{student.age}} years old.</h4>
+{% endfor %}
+</div>
+<div class="container">
+  <p><a class='btn btn-warning' href="{% url 'cbv_app:update' pk=schools.pk %}">UPDATE</a></p>
+  <p><a class='btn btn-warning' href="{% url 'cbv_app:delete' pk=schools.pk %}">DELETE</a></p>
+</div>
+{% endblock %}

@@ -1,0 +1,14 @@
+body{
+  background-color: black;
+}
+.bar{
+  margin:auto;
+  height:50px;
+  width:1280px;
+
+}
+a{
+  font-style: italic;
+  font-size: 20px;
+
+}
